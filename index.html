@@ -9,20 +9,22 @@
     <link rel="stylesheet" href="stylesheets/style.css">
   </head>
   <body>
-    <div style="font-size: 11px">
-      <p>You have <span style="font-size: 25px; color: black">{{format(player.money)}}</span> nullmatter.</p>
-      You are getting {{format(getMoneyPerSec())}} nullmatter per second.
-      <div :style="{visibility: player.dimensions[1].gte(1) ? '' : 'hidden'}">
-        Reduce the tick interval by {{format(Decimal.sub(1, getTickspeedBase()).mul(100))}}%.<br>
-        <button id="tickSpeed" onclick="buyTickspeed()" style="height: 25px; width: 200px; font-size: 12px" :class="player.money.gte(getTickspeedCost()) ? 'storebtn' : 'unavailablebtn'">Cost: {{format(getTickspeedCost())}}</button>
-        <button id="tickSpeedMax" onclick="buyMaxTickSpeed()" style="height: 25px; font-size: 12px" :class="player.money.gte(getTickspeedCost()) ? 'storebtn' : 'unavailablebtn'">Buy Max</button><br>
-        Tickspeed: {{format(getTickspeed().mul(1000))}}
+    <div id="app">
+      <div style="font-size: 11px">
+        <p>You have <span style="font-size: 25px; color: black">{{format(player.money)}}</span> nullmatter.</p>
+        You are getting {{format(getMoneyPerSec())}} nullmatter per second.
+        <div :style="{visibility: player.dimensions[1].gte(1) ? '' : 'hidden'}">
+          Reduce the tick interval by {{format(Decimal.sub(1, getTickspeedBase()).mul(100))}}%.<br>
+          <button id="tickSpeed" onclick="buyTickspeed()" style="height: 25px; width: 200px; font-size: 12px" :class="player.money.gte(getTickspeedCost()) ? 'storebtn' : 'unavailablebtn'">Cost: {{format(getTickspeedCost())}}</button>
+          <button id="tickSpeedMax" onclick="buyMaxTickSpeed()" style="height: 25px; font-size: 12px" :class="player.money.gte(getTickspeedCost()) ? 'storebtn' : 'unavailablebtn'">Buy Max</button><br>
+          Tickspeed: {{format(getTickspeed().mul(1000))}}
+        </div>
       </div>
+      <p></p>
+      <button id="dimensionsbtn" style="font-family: Typewriter; font-size: 20px" class="tabbtn" onclick="showTab('dimensions')">Dimensions</button>
+      <button id="optionsbtn" style="font-family: Typewriter; font-size: 20px" class="tabbtn" onclick="showTab('options')">Options</button>
+      <button id="statisticsbtn" style="font-family: Typewriter; font-size: 20px" class="tabbtn" onclick="showTab('statistics')">Statistics</button>
+      <button id="achievementsbtn" style="font-family: Typewriter; font-size: 20px" class="tabbtn" onclick="showTab('achievements')">Achievements</button>
     </div>
-    <p></p>
-    <button id="dimensionsbtn" style="font-family: Typewriter; font-size: 20px" class="tabbtn" onclick="showTab('dimensions')">Dimensions</button>
-    <button id="optionsbtn" style="font-family: Typewriter; font-size: 20px" class="tabbtn" onclick="showTab('options')">Options</button>
-    <button id="statisticsbtn" style="font-family: Typewriter; font-size: 20px" class="tabbtn" onclick="showTab('statistics')">Statistics</button>
-    <button id="achievementsbtn" style="font-family: Typewriter; font-size: 20px" class="tabbtn" onclick="showTab('achievements')">Achievements</button>
   </body>
 </html>
