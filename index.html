@@ -13,9 +13,9 @@
       <p>You have <span style="font-size: 25px; color: black">{{format(player.money)}}</span> nullmatter.</p>
       You are getting {{format(getMoneyPerSec())}} nullmatter per second.
       <div :style="{visibility: player.dimensions[1].gte(1) ? '' : 'hidden'}">
-        Reduce the tick interval by 10%.<br>
-        <button id="tickSpeed" onclick="buyTickspeed()" style="height: 25px; width: 200px; font-size: 12px" class="storebtn">Cost: 1000</button>
-        <button id="tickSpeedMax" onclick="buyMaxTickSpeed()" style="height: 25px; font-size: 12px" class="storebtn">Buy Max</button><br>
+        Reduce the tick interval by {{format(Decimal.sub(1, getTickspeedBase()).mul(100))}}%.<br>
+        <button id="tickSpeed" onclick="buyTickspeed()" style="height: 25px; width: 200px; font-size: 12px" :class="player.money.gte(getTickspeedCost()) ? 'storebtn' : 'unavailablebtn'">Cost: {{format(getTickspeedCost())}}</button>
+        <button id="tickSpeedMax" onclick="buyMaxTickSpeed()" style="height: 25px; font-size: 12px" :class="player.money.gte(getTickspeedCost()) ? 'storebtn' : 'unavailablebtn'">Buy Max</button><br>
         Tickspeed: {{format(getTickspeed().mul(1000))}}
       </div>
     </div>
