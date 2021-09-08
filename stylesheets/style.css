@@ -5,8 +5,7 @@
 
 body {
     background-color: #fff;
-    padding: 1px 7px;
-    font: 14px/1.5 Typewriter;
+    font-family: Typewriter;
     color: #727272;
     font-weight: 300;
 }
