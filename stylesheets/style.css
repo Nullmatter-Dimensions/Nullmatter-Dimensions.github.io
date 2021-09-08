@@ -1,13 +1,16 @@
 @font-face {
-    font-family: Typewriter;
-    src: url('MonospaceTypewriter.ttf');
+  font-family: Typewriter;
+  src: url('MonospaceTypewriter.ttf');
+}
+
+* {
+  font-family: Typewriter;
 }
 
 body {
-    background-color: #fff;
-    font-family: Typewriter;
-    color: #727272;
-    text-align: center;
+  background-color: #fff;
+  color: #727272;
+  text-align: center;
 }
 
 p, ul, ol, table, pre, dl {
