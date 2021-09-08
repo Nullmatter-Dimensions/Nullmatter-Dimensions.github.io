@@ -2,3 +2,11 @@
     font-family: Typewriter;
     src: url('MonospaceTypewriter.ttf');
 }
+
+body {
+    background-color: #fff;
+    padding: 1px 7px;
+    font: 14px/1.5 Typewriter;
+    color: #727272;
+    font-weight: 300;
+}
