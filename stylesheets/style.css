@@ -9,3 +9,7 @@ body {
     color: #727272;
     text-align: center;
 }
+
+p, ul, ol, table, pre, dl {
+  margin: 0 0 3px;
+}
